@@ -120,3 +120,16 @@ Siga estes passos:
 - Os **hiperparâmetros** podem ser modificados para melhorar o desempenho conforme o seu ambiente de execução.
 
 ---
+
+## 🤝 Colaboradores
+
+> Agradecimentos especiais a todos que contribuíram para este projeto 🌟:
+
+| Nome  | GitHub |
+| :--- | :--- |
+| Gabriela Zerbone | [@gzerbone](https://github.com/gzerbone) |
+| Hanna Câmara da Justa | [@HannaCJ ](https://github.com/HannaCJ ) |
+| Catharina | [@catharinapc](https://github.com/catharinapc) |
+| Anderson Mendes | [@Andersonn-2000](https://github.com/Andersonn-2000) |
+
+---
