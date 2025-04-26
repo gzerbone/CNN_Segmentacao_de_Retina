@@ -53,7 +53,7 @@ As imagens do dataset passam pelas seguintes etapas antes do treinamento:
 
 ---
 
-## 🏗️ Arquitetura do Modelo
+### 🏗️ Arquitetura do Modelo
 
 O modelo **UNetMER** é baseado na arquitetura UNet e é composto por:
 
@@ -112,7 +112,56 @@ Siga estes passos:
 
 3. 🖥️ Execute o código Python para treinar e avaliar o modelo.
 
-### ⚠️ Observações:
+## 📦 Requisitos
+
+Antes de executar o projeto, certifique-se de instalar as seguintes bibliotecas:
+
+### 📊 Bibliotecas de Data Science
+
+- `numpy >= 1.19.0`
+- `pandas >= 1.3.0`
+- `scikit-learn >= 1.0.0`
+- `matplotlib >= 3.4.0`
+- `seaborn >= 0.11.0`
+
+### 🧠 Deep Learning
+
+- `tensorflow >= 2.8.0`
+- `tensorflow-addons >= 0.16.0`
+
+### 🖼️ Processamento de Imagem
+
+- `pillow >= 9.0.0`
+- `opencv-python >= 4.5.5`
+- `scipy >= 1.8.0`
+
+### ⚙️ MLOps
+
+- `mlflow >= 1.20.0`
+
+### 🛠️ Utilitários
+
+- `jupyter >= 1.0.0`
+- `python-dotenv >= 0.19.0`
+- `tqdm >= 4.62.0`
+- `ipykernel >= 6.0.0`
+- `pyyaml >= 6.0`
+
+### 📈 Visualização Avançada
+
+- `plotly >= 5.5.0`
+
+---
+
+### 🚀 Instalação rápida
+
+Para instalar todos os pacotes de uma vez:
+
+```bash
+pip install numpy>=1.19.0 pandas>=1.3.0 scikit-learn>=1.0.0 matplotlib>=3.4.0 seaborn>=0.11.0 tensorflow>=2.8.0 tensorflow-addons>=0.16.0 pillow>=9.0.0 opencv-python>=4.5.5 scipy>=1.8.0 mlflow>=1.20.0 jupyter>=1.0.0 python-dotenv>=0.19.0 tqdm>=4.62.0 ipykernel>=6.0.0 pyyaml>=6.0 plotly>=5.5.0
+```
+
+## ⚠️ Observações:
 
 - Certifique-se de que as bibliotecas necessárias estão instaladas:  
   (`TensorFlow`, `Keras`, `OpenCV`, etc.)
@@ -129,7 +178,7 @@ Siga estes passos:
 | :--- | :--- |
 | Gabriela Zerbone | [@gzerbone](https://github.com/gzerbone) |
 | Hanna Câmara da Justa | [@HannaCJ ](https://github.com/HannaCJ ) |
-| Catharina | [@catharinapc](https://github.com/catharinapc) |
+| Catharina Carneiro | [@catharinapc](https://github.com/catharinapc) |
 | Anderson Mendes | [@Andersonn-2000](https://github.com/Andersonn-2000) |
 
 ---
