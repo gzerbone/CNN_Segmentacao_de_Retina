@@ -1,34 +1,122 @@
-#Descrição do Código de Segmentação de Retina
-Este código implementa um modelo de aprendizado profundo para segmentação de vasos sanguíneos na retina. Ele usa uma arquitetura UNet modificada chamada UNetMER (UNet with Mobile Encoder and Refinement), que incorpora codificadores MobileNetV2 para eficiência e módulos de refinamento para melhor detecção de bordas. O código abrange as seguintes etapas:
+# 🧠 Segmentação de Vasos Sanguíneos na Retina usando **UNetMER**
 
-## **1. Exploração e Pré-processamento de Dados:**
+Este repositório contém um código em **Python** que implementa um modelo de aprendizado profundo para segmentação de vasos sanguíneos em imagens da retina. O modelo é baseado na arquitetura **UNet**, com modificações para melhorar a eficiência e a precisão.
 
-* Importa bibliotecas necessárias como TensorFlow, Keras, OpenCV, etc.
-* Define o caminho do dataset, que é carregado a partir do Google Drive.
-* Realiza uma exploração inicial do dataset para verificar o formato, tamanho, modo de cor das imagens e a distribuição das classes.
-* Verifica se há imagens corrompidas ou duplicadas.
-* Normaliza as imagens (valores de pixel entre 0 e 1) e as redimensiona para um tamanho consistente.
-* Divide o dataset em conjuntos de treinamento e teste.
-* Cria geradores de dados com aumento de dados (rotações, espelhamento, zoom) para o conjunto de treinamento, a fim de aumentar a robustez do modelo.
+---
 
-## **2. Arquitetura do Modelo:**
+## 📚 Descrição do Projeto
 
-  * Define a arquitetura UNetMER usando blocos codificadores MobileNetV2, módulos de refinamento e atenção espacial.
-  * O codificador extrai características hierárquicas da imagem.
-  * O decodificador reconstrói a segmentação usando as características extraídas e conexões de salto do codificador.
-  * Os módulos de refinamento aprimoram a detecção de bordas.
-  * A atenção espacial foca em áreas relevantes da imagem.
+Este projeto tem como objetivo desenvolver um modelo capaz de segmentar automaticamente os vasos sanguíneos em imagens da retina. A segmentação precisa dos vasos é crucial para o diagnóstico e monitoramento de diversas doenças oculares, como **retinopatia diabética** e **glaucoma**.
 
-## **3. Treinamento e Avaliação:**
+✨ O modelo utilizado é chamado **UNetMER** (*UNet with Mobile Encoder and Refinement*), e incorpora:
 
-* Compila o modelo com uma função de perda combinada (Binary Crossentropy e Dice Loss) e métricas relevantes (Dice Coefficient, Accuracy, Recall, Precision).
-* Treina o modelo usando os geradores de dados e callbacks para otimizar o processo de treinamento (redução da taxa de aprendizado, parada antecipada).
-* Avalia o modelo no conjunto de teste para medir seu desempenho.
-* Visualiza as previsões do modelo em imagens de teste para análise qualitativa.
+- 🔹 **Encoder MobileNetV2:** Extração eficiente de características da imagem.
+- 🔹 **Módulos de Refinamento:** Melhora da detecção de bordas dos vasos.
+- 🔹 **Atenção Espacial:** Foco em áreas relevantes da imagem.
 
-## **4. Funções Auxiliares:**
+---
 
-* Inclui funções para carregar e pré-processar dados, criar geradores de dados, definir a arquitetura do modelo, compilar o modelo, definir callbacks e visualizar resultados.
+## 📂 Dataset
 
-# `Objetivo:`
-  O objetivo deste código é treinar um modelo de aprendizado profundo capaz de segmentar com precisão os vasos sanguíneos em imagens da retina. Isso tem aplicações importantes na área médica, como auxiliar no diagnóstico e monitoramento de doenças oculares, como retinopatia diabética e glaucoma.
+O dataset utilizado é o **"Retina Blood Vessel"** do Kaggle. Ele contém imagens da retina e suas respectivas máscaras de segmentação.
+
+### 📁 Estrutura do Dataset:
+
+```bash
+dataset_retina/
+├── Data/
+│   ├── train/
+│   │   ├── image/   # Imagens de treino
+│   │   └── mask/    # Máscaras de treino
+│   └── test/
+│       ├── image/   # Imagens de teste
+│       └── mask/    # Máscaras de teste
+└── ...
+```
+
+### 🔧 Pré-processamento
+
+As imagens do dataset passam pelas seguintes etapas antes do treinamento:
+
+- 🖼️ **Redimensionamento:**  
+  Todas as imagens são redimensionadas para **128x128 pixels**.
+
+- ⚙️ **Normalização:**  
+  Os valores dos pixels são normalizados para o intervalo **[0, 1]**.
+
+- 🔄 **Aumento de Dados (Data Augmentation):**  
+  Durante o treinamento, são aplicadas técnicas de aumento de dados para melhorar a robustez do modelo, incluindo:
+  
+  - Rotações aleatórias
+  - Espelhamento horizontal e vertical
+  - Zoom
+
+---
+
+## 🏗️ Arquitetura do Modelo
+
+O modelo **UNetMER** é baseado na arquitetura UNet e é composto por:
+
+- **Codificador:**  
+  Extrai características hierárquicas usando blocos convolucionais seguidos de camadas de **Max Pooling**.
+
+- **Decodificador:**  
+  Reconstrói a segmentação utilizando:
+  - Características extraídas no codificador
+  - **Conexões de salto** (skip connections)
+  - **Convoluções transpostas** (transposed convolutions) e **upsampling**
+
+---
+
+## 🎯 Treinamento
+
+O modelo é treinado no conjunto de treinamento para aprender a mapear imagens para suas máscaras correspondentes.
+
+### ⚡ Função de Perda:
+
+- Combinação de **Binary Crossentropy** e **Dice Loss** para otimizar a segmentação.
+
+### 📊 Métricas Avaliadas:
+
+- **Dice Coefficient**
+- **Accuracy**
+- **Recall**
+- **Precision**
+
+---
+
+## 🏆 Resultados
+
+Após o treinamento, o modelo é avaliado no conjunto de teste do dataset. Os resultados obtidos demonstram que o modelo UNetMER é capaz de segmentar os vasos sanguíneos na retina com alta precisão.
+
+---
+
+## 🚀 Como Usar
+
+Siga estes passos:
+
+1. 📥 Baixe o dataset **"Retina Blood Vessel"** do Kaggle.
+2. 🗂️ Organize o dataset conforme a estrutura abaixo:
+
+    ```bash
+    dataset_retina/
+    ├── Data/
+    │   ├── train/
+    │   │   ├── image/   # Imagens de treino
+    │   │   └── mask/    # Máscaras de treino
+    │   └── test/
+    │       ├── image/   # Imagens de teste
+    │       └── mask/    # Máscaras de teste
+    └── ...
+    ```
+
+3. 🖥️ Execute o código Python para treinar e avaliar o modelo.
+
+### ⚠️ Observações:
+
+- Certifique-se de que as bibliotecas necessárias estão instaladas:  
+  (`TensorFlow`, `Keras`, `OpenCV`, etc.)
+- Ajuste o **caminho para o dataset** no código conforme necessário.
+- Os **hiperparâmetros** podem ser modificados para melhorar o desempenho conforme o seu ambiente de execução.
+
+---
