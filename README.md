@@ -17,6 +17,7 @@ Este repositório contém um código em **Python** que implementa um modelo de a
 - [🤝 Colaboradores](#-colaboradores)
 - [⚠️ Observações](#️-observações)
 
+
 ---
 
 ## 📚 Descrição do Projeto
@@ -69,7 +70,7 @@ As imagens do dataset passam pelas seguintes etapas antes do treinamento:
 
 ---
 
-### 🏗️ Arquitetura do Modelo
+## 🏗️ Arquitetura do Modelo
 
 O modelo **UNetMER** é baseado na arquitetura UNet e é composto por:
 
