@@ -110,28 +110,66 @@ Após o treinamento, o modelo é avaliado no conjunto de teste do dataset. Os re
 
 ## 🚀 Como Usar
 
-Siga estes passos:
+Siga os passos abaixo para executar o projeto, seja localmente ou no Google Colab:
 
-1. 📥 Baixe o dataset **"Retina Blood Vessel"** do Kaggle.
-2. 🗂️ Organize o dataset conforme a estrutura abaixo:
+### 1. 📥 Baixe o Dataset
 
-    ```bash
-    dataset_retina/
-    ├── Data/
-    │   ├── train/
-    │   │   ├── image/   # Imagens de treino
-    │   │   └── mask/    # Máscaras de treino
-    │   └── test/
-    │       ├── image/   # Imagens de teste
-    │       └── mask/    # Máscaras de teste
-    └── ...
-    ```
+Primeiro, você precisa baixar o dataset **"Retina Blood Vessel"** do Kaggle. Você pode acessá-lo através deste [link do Kaggle](https://www.kaggle.com/datasets/abdallahwagih/retina-blood-vessel).
 
-3. 🖥️ Execute o código Python para treinar e avaliar o modelo.
+### 2. 🗂️ Organize o Dataset
+
+Após o download, organize o dataset de acordo com a estrutura de diretórios esperada. A estrutura do dataset deve ser a seguinte:
+
+```bash
+dataset_retina/
+├── Data/
+│   ├── train/
+│   │   ├── image/   # Imagens de treino
+│   │   └── mask/    # Máscaras de treino
+│   └── test/
+│       ├── image/   # Imagens de teste
+│       └── mask/    # Máscaras de teste
+└── ...
+```
+### 3. 🖥️ Rodando Localmente
+Se você optar por rodar o código localmente, você precisará alterar o caminho do dataset no código. O seguinte código mostra como definir o caminho para o dataset no seu computador:
+```python
+# Se você estiver rodando localmente, defina o caminho para o seu dataset
+path = '/caminho/para/o/seu/dataset_retina'  # Substitua pelo caminho onde você armazenou o dataset
+
+# Definição dos caminhos das pastas de treino e teste dentro do dataset
+pasta_treinamento  = os.path.join(path, "Data", "train")  # Caminho para as imagens de treino
+pasta_teste  = os.path.join(path, "Data", "test")  # Caminho para as imagens de teste
+```
+
+### 4. 🌐 Rodando no Google Colab com Google Drive
+Caso você prefira rodar o código no Google Colab, você pode facilitar o gerenciamento e o manuseio das imagens ao armazenar o dataset no seu Google Drive.  
+- **Passos:**
+  * **1.** `Armazene o dataset no seu Google Drive:` Crie uma pasta chamada dataset_retina em seu Google Drive e faça o upload das pastas do dataset (como "Data", "train", "test", etc.) dentro dela.
+  
+  * **2.** `Monte seu Google Drive no Colab:` No Colab, você pode montar seu Google Drive para acessar o dataset diretamente.
+    * Aqui está o código para montar o Google Drive e definir os caminhos para as imagens de treino e teste (como está no [notebook](https://github.com/gzerbone/CNN_Segmentacao_de_Retina/blob/main/CNN_Segmentação_de_Retina.ipynb)):
+     ``` python
+    # Montando o Google Drive no Colab para acessar o dataset
+    from google.colab import drive
+    drive.mount('/content/drive', force_remount=True)
+    
+    # Defina o caminho para o seu dataset armazenado no Google Drive
+    path = '/content/drive/MyDrive/dataset_retina'  # Substitua pelo caminho correto se necessário
+    
+    # Definição dos caminhos das pastas de treino e teste dentro do dataset
+    pasta_treinamento  = os.path.join(path, "Data", "train")  # Caminho para as imagens de treino
+    pasta_teste  = os.path.join(path, "Data", "test")  # Caminho para as imagens de teste
+
+      ```
+### 5. 🎯 Execute o Código
+Após configurar o caminho do dataset (seja local ou no Google Drive), execute o código Python para treinar e avaliar o modelo.
+
+---
 
 ## 📦 Requisitos
 
-Antes de executar o projeto, certifique-se de instalar as seguintes bibliotecas:
+Bibliotecas utilizadas:
 
 ### 📊 Bibliotecas de Data Science
 
