@@ -4,6 +4,21 @@ Este repositório contém um código em **Python** que implementa um modelo de a
 
 ---
 
+## 📑 Tabela de Conteúdo
+
+- [📚 Descrição do Projeto](#-descrição-do-projeto)
+- [📂 Dataset](#-dataset)
+- [🧹 Pré-processamento](#-pré-processamento)
+- [🏗️ Arquitetura do Modelo](#-arquitetura-do-modelo)
+- [🎯 Treinamento](#-treinamento)
+- [🏆 Resultados](#-resultados)
+- [🚀 Como Usar](#-como-usar)
+- [📦 Requisitos](#-requisitos)
+- [🤝 Colaboradores](#-colaboradores)
+- [⚠️ Observações](#️-observações)
+
+---
+
 ## 📚 Descrição do Projeto
 
 Este projeto tem como objetivo desenvolver um modelo capaz de segmentar automaticamente os vasos sanguíneos em imagens da retina. A segmentação precisa dos vasos é crucial para o diagnóstico e monitoramento de diversas doenças oculares, como **retinopatia diabética** e **glaucoma**.
@@ -33,6 +48,7 @@ dataset_retina/
 │       └── mask/    # Máscaras de teste
 └── ...
 ```
+---
 
 ### 🔧 Pré-processamento
 
@@ -182,3 +198,19 @@ pip install numpy>=1.19.0 pandas>=1.3.0 scikit-learn>=1.0.0 matplotlib>=3.4.0 se
 | Anderson Mendes | [@Andersonn-2000](https://github.com/Andersonn-2000) |
 
 ---
+
+<p align="center">
+  <a href="https://github.com/gzerbone/CNN_Segmentacao_de_Retina">
+    <img alt="Python" src="https://img.shields.io/badge/Python-3.8%2B-blue">
+  </a>
+  <a href="#">
+    <img alt="Status" src="https://img.shields.io/badge/Status-Em%20Desenvolvimento-orange">
+  </a>
+  <a href="#">
+    <img alt="Made With" src="https://img.shields.io/badge/Made%20with-❤️-red">
+  </a>
+  <a href="#">
+    <img alt="License" src="https://img.shields.io/badge/License-MIT-blue.svg">
+  </a>
+</p>
+
